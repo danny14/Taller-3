@@ -1,0 +1,43 @@
+<?php
+
+use mvc\interfaces\controllerActionInterface;
+use mvc\controller\controllerClass;
+use mvc\config\configClass as config;
+use mvc\request\requestClass as request;
+use mvc\routing\routingClass as routing;
+use mvc\session\sessionClass as session;
+use mvc\i18n\i18nClass as i18n;
+
+/**
+ * Description of indexActionClass 
+ * 
+ * @author Danny Steven Ruiz Hernandez
+ */
+class createActionClass extends controllerClass implements controllerActionInterface {
+
+    public function execute() {
+        try {
+            if (request::getInstance()->isMethod('POST')) {
+//                $usuario = request::getInstance()->getPost(usuarioCredencialTableClassClass::getNameField(usuarioCredencialTableClassClass::USUARIO, true));
+//                $password = request::getInstance()->getPost(usuarioCredencialTableClassClass::getNameField(usuarioCredencialTableClassClass::PASSWORD, true));
+                // $id = request::getInstance()->getPost(usuarioCredencialTableClass::getNameField(usuarioCredencialTableClass::ID, true));
+                
+                $credencial_id = request::getInstance()->getPost(usuarioCredencialTableClass::getNameField(usuarioCredencialTableClass::CREDENCIAL_ID, true));
+                $usuario_id = request::getInstance()->getPost(usuarioCredencialTableClass::getNameField(usuarioCredencialTableClass::USUARIO_ID, true));
+                $data = array(
+                    usuarioCredencialTableClass::CREDENCIAL_ID => $credencial_id,
+                    usuarioCredencialTableClass::USUARIO_ID => $usuario_id
+                );
+
+                usuarioCredencialTableClass::insert($data);
+                routing::getInstance()->redirect('usuarioCredencial', 'index');
+            } else {
+                routing::getInstance()->redirect('usuarioCredencial', 'index');
+            }
+        } catch (PDOException $exc) {
+            echo $exc->getMessage() . '<br>';
+            echo $exc->getTraceAsString();
+        }
+    }
+
+}

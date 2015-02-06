@@ -1,0 +1,241 @@
+homepage:
+  url:    /
+  param:  { module: default, action: index, format: html }
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+
+##-------------------------- shfSecurity --------------------------##
+shfSecurity_index:
+  url:    /signin
+  param:  { module: shfSecurity, action: index, format: html }
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+
+shfSecurity_login:
+  url:    /login
+  param:  { module: shfSecurity, action: login, format: html }
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+    - model/base/usuarioCredencialBaseTableClass.php
+    - model/usuarioCredencialTableClass.php
+    - model/base/credencialBaseTableClass.php
+    - model/credencialTableClass.php
+    - model/base/recordarMeBaseTableClass.php
+    - model/recordarMeTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+
+shfSecurity_logout:
+  url:    /logout
+  param:  { module: shfSecurity, action: logout, format: html }
+  load:
+    - model/base/recordarMeBaseTableClass.php
+    - model/recordarMeTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+##-------------------------- shfSecurity --------------------------##
+usuario_index:
+    url:    /usuario/index
+    param:  {module: usuario, action: index, format: html}
+    load:
+      - model/base/usuarioBaseTableClass.php
+      - model/usuarioTableClass.php
+      
+usuario_insert:
+    url:    /usuario/insertar
+    param:  {module: usuario, action: insert, format: html}
+    load:
+      - model/base/usuarioBaseTableClass.php
+      - model/usuarioTableClass.php
+
+usuario_create:
+    url:    /usuario/crear
+    param:  {module: usuario, action: create, format: html}
+    load:
+      - model/base/usuarioBaseTableClass.php
+      - model/usuarioTableClass.php
+      
+usuario_edit:
+    url:    /usuario/editar
+    param:  {module: usuario, action: edit, format: html}
+    load:
+      - model/base/usuarioBaseTableClass.php
+      - model/usuarioTableClass.php
+      
+usuario_update:
+    url:    /usuario/actualizar
+    param:  {module: usuario, action: update, format: html}
+    load:
+      - model/base/usuarioBaseTableClass.php
+      - model/usuarioTableClass.php
+      
+usuario_delete:
+    url:    /usuario/eliminar
+    param:  {module: usuario, action: delete, format: html}
+    load:
+      - model/base/usuarioBaseTableClass.php
+      - model/usuarioTableClass.php
+      
+usuario_deleteSelect:
+    url:    /usuario/eliminarSeleccion
+    param:  {module: usuario, action: deleteSelect, format: html}
+    load:
+      - model/base/usuarioBaseTableClass.php
+      - model/usuarioTableClass.php
+      
+usuario_view:
+    url:    /usuario/ver
+    param:  {module: usuario, action: view, format: html}
+    load:
+      - model/base/usuarioBaseTableClass.php
+      - model/usuarioTableClass.php
+###################################CREDENCIAL########################################
+crendencial_index:
+    url:    /usuario_credencial/index
+    param:  { module: usuarioCredencial, action: index, format: html }
+    load:
+      - model/base/usuarioCredencialBaseTableClass.php
+      - model/usuarioCredencialTableClass.php
+
+credencial_insert:
+    url:    /usuario_credencial/insertar
+    param:  { module: usuarioCredencial, action: insert, format: html }
+    load:
+      - model/base/usuarioCredencialBaseTableClass.php
+      - model/usuarioCredencialTableClass.php
+
+credencial_create:
+    url:    /usuario_credencial/create
+    param:  { module: usuarioCredencial, action: create, format: html }
+    load:
+      - model/base/usuarioCredencialBaseTableClass.php
+      - model/usuarioCredencialTableClass.php
+      
+#############################DATOS USUARIO#############################################
+datosUsuario_index:
+    url:    /datos_usuario/index
+    param:  { module: datosUsuario, action: index, format: html }
+    load:
+      - model/base/datosUsuarioBaseTableClass.php
+      - model/datosUsuarioTableClass.php
+
+datosUsuario_insert:
+    url:    /datos_usuario/insertar
+    param:  { module: datosUsuario, action: insert, format: html }
+    load:
+      - model/base/datosUsuarioBaseTableClass.php
+      - model/datosUsuarioTableClass.php
+
+datosUsuario_create:
+    url:    /datos_usuario/crear
+    param:  { module: datosUsuario, action: create, format: html }
+    load:
+      - model/base/datosUsuarioBaseTableClass.php
+      - model/datosUsuarioTableClass.php
+
+datosUsuario_edit:
+    url:    /datos_usuario/editar
+    param:  { module: datosUsuario, action: edit, format: html }
+    load:
+      - model/base/datosUsuarioBaseTableClass.php
+      - model/datosUsuarioTableClass.php
+      
+datosUsuario_update:
+    url:    /datos_usuario/actualizar
+    param:  { module: datosUsuario, action: update, format: html }
+    load:
+      - model/base/datosUsuarioBaseTableClass.php
+      - model/datosUsuarioTableClass.php
+#######################################################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+###-------------------------- EJEMPLO --------------------------##
+#default_index:
+#  url:    /usuarios/index
+#  param:  { module: default, action: index, format: html }
+#  load:
+#    - model/base/usuarioBaseTableClass.php
+#    - model/usuarioTableClass.php
+#
+#default_insert:
+#  url:    /usuarios/insertar
+#  param:  { module: default, action: insert, format: html }
+#  load:
+#    - model/base/usuarioBaseTableClass.php
+#    - model/usuarioTableClass.php
+#
+#default_create:
+#  url:    /usuarios/crear
+#  param:  { module: default, action: create, format: html }
+#  load:
+#    - model/base/usuarioBaseTableClass.php
+#    - model/usuarioTableClass.php
+#
+#default_edit:
+#  url:    /usuario/editar
+#  param:  { module: default, action: edit, format: html }
+#  load:
+#    - model/base/usuarioBaseTableClass.php
+#    - model/usuarioTableClass.php
+#
+#default_update:
+#  url:    /usuario/actualizar
+#  param:  { module: default, action: update, format: html }
+#  load:
+#    - model/base/usuarioBaseTableClass.php
+#    - model/usuarioTableClass.php
+#
+#default_delete:
+#  url:    /usuario/eliminar
+#  param:  { module: default, action: delete, format: html }
+#  load:
+#    - model/base/usuarioBaseTableClass.php
+#    - model/usuarioTableClass.php
+#
+#default_deleteSelect:
+#  url:    /usuario/eliminarSeleccion
+#  param:  { module: default, action: deleteSelect, format: html }
+#  load:
+#    - model/base/usuarioBaseTableClass.php
+#    - model/usuarioTableClass.php
+#
+#default_reporte:
+#  url:    /usuario/reporte
+#  param:  { module: default, action: report, format: pdf }
+###-------------------------- EJEMPLO --------------------------##
